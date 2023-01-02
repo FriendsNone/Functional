@@ -1,0 +1,21 @@
+{
+  "name": "functional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "main": "node index.js",
+    "deploy": "node deploy-commands.js",
+    "test": "node deploy-commands.js testing"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0"
+  }
+}
