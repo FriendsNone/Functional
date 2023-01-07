@@ -29,7 +29,7 @@ const responses = [
 	],
 ];
 
-const colors = [0x72ff72, 0xffdb1a, 0xff1a1a];
+const colors = [0x57F287, 0xFEE75C, 0xED4245];
 
 module.exports = {
 	data: new SlashCommandBuilder()
