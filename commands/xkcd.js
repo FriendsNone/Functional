@@ -16,9 +16,10 @@ function setSourceButton(data) {
 		.setURL(`https://xkcd.com/${data.num}`);
 }
 
-function setGenericButton(id, label, state) {
+function setGenericButton(id, emoji, label, state) {
 	return new ButtonBuilder()
 		.setCustomId(id)
+		.setEmoji(emoji)
 		.setLabel(label)
 		.setStyle(1)
 		.setDisabled(state);
@@ -73,8 +74,8 @@ module.exports = {
 
 			const embed = setEmbed(data);
 			const row = new ActionRowBuilder()
-				.addComponents(setGenericButton('previous', 'Previous', number === 1))
-				.addComponents(setGenericButton('next', 'Next', false))
+				.addComponents(setGenericButton('previous', '⬅️', 'Previous', number === 1))
+				.addComponents(setGenericButton('next', '➡️', 'Next', false))
 				.addComponents(setSourceButton(data));
 
 			await interaction.reply({ embeds: [embed], components: [row] });
@@ -92,15 +93,15 @@ module.exports = {
 
 					const embed2 = setEmbed(data);
 					const row2 = new ActionRowBuilder()
-						.addComponents(setGenericButton('previous', 'Previous', number === 1))
-						.addComponents(setGenericButton('next', 'Next', false))
+						.addComponents(setGenericButton('previous', '⬅️', 'Previous', number === 1))
+						.addComponents(setGenericButton('next', '➡️', 'Next', false))
 						.addComponents(setSourceButton(data));
 
 					await i.update({ embeds: [embed2], components: [row2] });
 					collector.resetTimer();
 				}
 				else {
-					await i.reply({ content: 'You can\'t use this button!', ephemeral: true });
+					await i.reply({ content: 'Only the user who used the command can use this button!', ephemeral: true });
 				}
 			});
 
@@ -122,7 +123,7 @@ module.exports = {
 
 			const embed = setEmbed(data);
 			const row = new ActionRowBuilder()
-				.addComponents(setGenericButton('random', 'Randomize', false))
+				.addComponents(setGenericButton('random', '🎲', 'Randomize', false))
 				.addComponents(setSourceButton(data));
 
 			await interaction.reply({ embeds: [embed], components: [row] });
@@ -142,14 +143,14 @@ module.exports = {
 
 					const embed2 = setEmbed(data);
 					const row2 = new ActionRowBuilder()
-						.addComponents(setGenericButton('random', 'Randomize', false))
+						.addComponents(setGenericButton('random', '🎲', 'Randomize', false))
 						.addComponents(setSourceButton(data));
 
 					await i.update({ embeds: [embed2], components: [row2] });
 					collector.resetTimer();
 				}
 				else {
-					await i.reply({ content: 'You can\'t do that!', ephemeral: true });
+					await i.reply({ content: 'Only the user who used the command can use this button!', ephemeral: true });
 				}
 			});
 

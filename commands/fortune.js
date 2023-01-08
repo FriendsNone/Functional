@@ -33,12 +33,12 @@ const colors = [0x57F287, 0xFEE75C, 0xED4245];
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('8ball')
-		.setDescription('Ask a question, and see what the future lies!')
+		.setName('fortune')
+		.setDescription('Ask a question, and see what the future holds!')
 		.addStringOption(option =>
 			option
 				.setName('question')
-				.setDescription('Ask anything you want.')
+				.setDescription('Any question you could possibly ask.')
 				.setRequired(true)),
 	async execute(interaction) {
 		const question = interaction.options.getString('question');
