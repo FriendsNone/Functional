@@ -16,8 +16,7 @@ module.exports = {
 					{ name: 'd10', value: 10 },
 					{ name: 'd12', value: 12 },
 					{ name: 'd20', value: 20 },
-					{ name: 'd100', value: 100 },
-				))
+					{ name: 'd100', value: 100 }))
 		.addIntegerOption(option =>
 			option
 				.setName('count')
@@ -46,8 +45,7 @@ module.exports = {
 			.addFields(
 				{ name: 'Dice:', value: `${count}d${sides}`, inline: true },
 				{ name: 'Modifier:', value: modifier ? (modifier > 0 ? `+${modifier}` : `${modifier}`) : 'None', inline: true },
-				{ name: 'Total:', value: `${total}` },
-			);
+				{ name: 'Total:', value: `${total}` });
 
 		const row = new ActionRowBuilder()
 			.addComponents(
@@ -55,8 +53,7 @@ module.exports = {
 					.setCustomId('roll_again')
 					.setEmoji('🎲')
 					.setLabel('Roll again')
-					.setStyle(1),
-			);
+					.setStyle(1));
 
 		await interaction.reply({ embeds: [embed], components: [row], ephemeral: secret });
 
@@ -72,8 +69,7 @@ module.exports = {
 					.addFields(
 						{ name: 'Dice:', value: `${count}d${sides}`, inline: true },
 						{ name: 'Modifier:', value: modifier ? (modifier > 0 ? `+${modifier}` : `${modifier}`) : 'None', inline: true },
-						{ name: 'Total:', value: `${newTotal}` },
-					);
+						{ name: 'Total:', value: `${newTotal}` });
 
 				await i.update({ embeds: [embed2] });
 				await collector.resetTimer();

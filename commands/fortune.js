@@ -50,8 +50,7 @@ module.exports = {
 			.setTitle(`${interaction.member.user.tag} asked...`)
 			.addFields(
 				{ name: 'Question:', value: question },
-				{ name: 'Answer:', value: responses[category][response] },
-			);
+				{ name: 'Answer:', value: responses[category][response] });
 
 		await interaction.reply({ embeds: [embed] });
 	},
