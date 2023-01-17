@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require('discord.js');
+const fetch = require('node-fetch');
 
 function setEmbed(data) {
 	return new EmbedBuilder()
